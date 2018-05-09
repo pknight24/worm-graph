@@ -10,7 +10,7 @@ The number of connections between two cell classes can be given by:
 
 If only one cell class is passed as an argument, a dictionary of its connections will be returned. 
 
-####TODO
+#### TODO
 
 I'd like to add graphing capabilties with the *networkx* library. 
 Ideally, users will be able to pass a cell class as an argument, and worm-graph will return a visual graph of its connections.
