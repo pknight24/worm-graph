@@ -23,8 +23,12 @@ if (len(sys.argv) < 2):
 else:
     ad = adj.getAdjacencies(sys.argv[1])
     if (len(sys.argv) == 3):
-        print(ad[sys.argv[2]])
+        key = sys.argv[2]
+        if key in ad:
+            print(ad[key])
+        else:
+            print(0)
     else:
-        print(ad)
+        print(pd.Series(ad))
 
 ellista.close()
