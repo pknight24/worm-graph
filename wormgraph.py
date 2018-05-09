@@ -19,7 +19,7 @@ cells = np.array(cells)
 unique_cells = np.unique(cells)
 
 if (len(sys.argv) < 2):
-    print("Usage:\n\twormgraph <CELLCLASS> <CELLCLASS>\n\tIf only one cell class is given, all connections for the given cell class will be returned.")
+    print("Usage:\n\twormgraph <NEURON> <NEURON>\n\tIf only one neuron is given, all connections for the given neuron will be returned.")
 else:
     ad = adj.getAdjacencies(sys.argv[1])
     if (len(sys.argv) == 3):
