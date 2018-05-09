@@ -6,7 +6,7 @@ Scripts for querying connectome data for the nematode *C. elegans*, gathered fro
 
 The number of connections between two cell classes can be given by:
 
-> wormgraph <CELLCLASS> <CELLCLASS>
+> wormgraph \<CELLCLASS\> \<CELLCLASS\>
 
 If only one cell class is passed as an argument, a dictionary of its connections will be returned. 
 
