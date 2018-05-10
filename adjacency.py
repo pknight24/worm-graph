@@ -5,9 +5,11 @@ def getAdjacencies(cellname, source="ellista.txt"):
     adj = {}
     for i in source.readlines():
         words = i.split(" ")
+        subs = words[1].split("\t")
         if cellname == words[0]:
-            subs = words[1].split("\t")
             adj[subs[0]] = int(subs[1])
+        elif cellname == subs[0]:
+            adj[words[0]] = int(subs[1])
 
     source.close()
 
