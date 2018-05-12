@@ -1,8 +1,8 @@
 import adjacency as adj
+import graphbuilder as gb
 
 import numpy as np
 import pandas as pd
-import networkx as nx
 import sys
 
 
