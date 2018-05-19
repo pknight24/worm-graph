@@ -24,7 +24,7 @@ Any number of destination neurons may be passed, as long as they are preceeded b
 
 To produce a graph rather than a simple connection count, pass the *-g* flag as an argument.
 
-### Dependencies
+#### Dependencies
 
 Worm-graph depends on:
 
