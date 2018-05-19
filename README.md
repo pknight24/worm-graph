@@ -4,13 +4,32 @@ Scripts for querying connectome data for the nematode *C. elegans*, gathered fro
 
 #### Usage
 
-The number of connections between two neurons can be given by:
+Worm-graph can be used to both create graphs of neuronal connections and to receive the number of connections between any given neurons. There are two main use-cases:
 
-> wormgraph \<NEURON\> \<NEURON\>
+**1.** Getting connection counts *from* a particular neuron.
 
-If only one neuron is passed as an argument, a series of its connections will be returned. 
+This is the simplest way to use worm-graph.
 
-#### TODO
+>wormgraph.py <ROOT-NEURON\>
 
-I'd like to add graphing capabilties with the *networkx* library. 
-Ideally, users will be able to pass a neuron as an argument, and worm-graph will return a visual graph of its connections.
+Each connected neuron and appropriate number of connections is printed to stdout.
+
+**2.** Getting connection counts *from* a particular neuron and *to* any given neuron or neurons.
+
+Similar to above, but destination neurons are passed as optional arguments with the *-t* flag.
+
+>wormgraph.py <ROOT-NEURON\> -t <NEURON\>
+
+Any number of destination neurons may be passed, as long as they are preceeded by a *-t* flag.
+
+To produce a graph rather than a simple connection count, pass the *-g* flag as an argument.
+
+### Dependencies
+
+Worm-graph depends on:
+
+* matplotlib
+* pandas
+* numpy
+* networkx
+* argparse

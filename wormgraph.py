@@ -4,7 +4,7 @@ import graphbuilder as gb
 import numpy as np
 import pandas as pd
 import sys
-
+import argparse
 
 ellista = open("ellista.txt", "r")
 
@@ -17,27 +17,36 @@ for i in ellista.readlines():
 cells = np.array(cells)
 unique_cells = np.unique(cells)
 
-if (len(sys.argv) < 2):
-    print("Usage:\n\twormgraph <NEURON> <NEURON>\n\tIf only one neuron is given, all connections for the given neuron will be returned.")
-else:
-    
-    args = sys.argv[1:]
-    if (args[0] == "-g" or args[0] == "--graph"):
-        root = args[1]
-        ad = adj.getAdjacencies(root)
-        graph = gb.buildGraph(root, ad)
-        gb.display(graph)
 
+parser = argparse.ArgumentParser(description="Query the C. elegans connectome")
+parser.add_argument("ROOT", help="The starting neuron for building graphs or finding connections.")
+parser.add_argument("-g", "--graph", action="store_true", help="Specify whether you want to see a graph of the query.")
+parser.add_argument("-t", "--to", action="append", help="Specify any neuron(s) that you want to query to from ROOT.")
+
+args = parser.parse_args()
+root = args.ROOT
+ad = adj.getAdjacencies(root)
+graph = args.graph
+to = args.to
+
+if not graph:
+    ad = pd.Series(ad)
+    if not to:
+        print(ad)
     else:
-        root = args[0]
-        ad = adj.getAdjacencies(root)
-        if (len(sys.argv) == 3):
-            key = args[1]
-            if key in ad:
-                print(ad[key])
-            else:
-                print(0)
-        else:
-            print(pd.Series(ad))
+        wanted = ad.filter(items=to)
+        print(wanted)
+else:
+    if not to:
+        g = gb.buildGraph(root, ad)
+        gb.display(g)
+    else:
+        wanted = {}
+        for k,v in ad.items():
+            if k in to:
+                wanted[k] = v
+        g = gb.buildGraph(root, wanted)
+        gb.display(g)
+
 
 ellista.close()
