@@ -9,7 +9,7 @@ def buildGraph(root, adj):
         G.add_edge(*e)
     return G
 
-def display(g, weighted=False):
+def display(g):
     import networkx as nx
     import matplotlib.pyplot as plt
 
