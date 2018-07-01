@@ -29,6 +29,6 @@ for k, v in master_matrix.items():
             v[cell] = 0
 
 frame = pd.DataFrame(list(master_matrix.values()), index=list(master_matrix.keys()))
-frame.to_csv("adjacency_matrix.csv")
+frame.to_csv("../data/adjacency_matrix.csv")
 
 ellista.close()
