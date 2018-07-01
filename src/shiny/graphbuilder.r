@@ -17,7 +17,6 @@ build.graph <- function(regex.vec, data = df)
   matches <- unique(matches)
   filtered.df <- filter(data, X %in% matches) %>% select(matches)
   filtered.df$Neuron <- matches
-  print(filtered.df)
   net <- network(filtered.df)
   network.vertex.names(net) <- matches
   net
