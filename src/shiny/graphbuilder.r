@@ -25,6 +25,6 @@ build.graph <- function(regex.vec, data = df)
 
 show.graph <- function(n)
 {
-  ggnet2(n, color = "blue", size = 1, label = TRUE, label.size = 2)
+  ggnet2(n, color = "blue", size = 1, label = TRUE, label.size = 2, alpha = 0.75)
 }
 
