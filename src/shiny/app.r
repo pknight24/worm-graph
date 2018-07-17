@@ -25,7 +25,7 @@ server <- function(input, output, session) {
 }
 
 ui <- basicPage(h2("Exploring the C. elegans Connectome"), 
-                p("The nematode C. elegans' neuron graph has been mapped completely, giving a total picture of the conections in its brain. To explore these connections, enter a regular expression in the text box below. When a regular expression is selected, worm-graph generates a graph of all the neruons that match the expression. Expressions can be nested, to give a more complete image of the bran topography."),
+                p("The nematode C. elegans' neuron graph has been mapped completely, giving a total picture of the conections in its brain. To explore these connections, enter a regular expression in the text box below. When a regular expression is selected, worm-graph generates a graph of all the neruons that match the expression. Expressions can be nested, to give a more complete image of the brain topography."),
                 textInput(inputId = "regex", 
                          label = "Enter a Regular Expression:",
                          value = ""),
