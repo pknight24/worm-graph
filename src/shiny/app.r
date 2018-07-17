@@ -35,4 +35,4 @@ ui <- basicPage(h2("Exploring the C. elegans Connectome"),
                 plotOutput("plot"))
 
 app <- shinyApp(ui = ui, server = server)
-runApp(app)
+runApp(app, port = 5555)
