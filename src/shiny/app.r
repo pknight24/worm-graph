@@ -1,5 +1,5 @@
 library(shiny)
-source("graphbuilder.r")
+source("./src/shiny/graphbuilder.r")
 
 server <- function(input, output, session) {
   
@@ -34,4 +34,5 @@ ui <- basicPage(h2("Exploring the C. elegans Connectome"),
                 uiOutput("ui"),
                 plotOutput("plot"))
 
-shinyApp(ui = ui, server = server)
+app <- shinyApp(ui = ui, server = server)
+runApp(app)

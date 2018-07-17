@@ -4,7 +4,7 @@ library(sna)
 library(ggplot2)
 library(dplyr)
 
-df <- read.csv("adjacency_matrix.csv")
+df <- read.csv("./src/shiny/adjacency_matrix.csv")
 
 build.graph <- function(regex.vec, data = df)
 {
