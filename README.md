@@ -8,4 +8,4 @@ To run worm-graph, you will need the following:
 * tidyverse
 * ggnet2
 
-You should be able to run the app with `shiny::runGitHub("worm-graph", "pknight24") from any R console.
+You should be able to run the app with `shiny::runGitHub("worm-graph", "pknight24")` from any R console.
