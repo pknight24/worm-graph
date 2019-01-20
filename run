@@ -1,3 +1,0 @@
-#! /usr/local/bin/bash
-
-Rscript ./src/shiny/app.r

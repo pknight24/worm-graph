@@ -1,5 +1,5 @@
 library(shiny)
-source("./src/shiny/graphbuilder.r")
+source("graphbuilder.r")
 
 server <- function(input, output, session) {
   
